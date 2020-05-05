@@ -11,6 +11,10 @@ public class Animal {
     String name;
     private Double weight = 10.0;
 
+    public String toString() {
+        return this.species + " " + this.name;
+    }
+
     File pic;
 
     public Animal(String species) {

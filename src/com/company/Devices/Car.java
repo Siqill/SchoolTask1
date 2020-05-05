@@ -1,4 +1,4 @@
-package com.company;
+package com.company.Devices;
 
 public class Car {
     public final String producer;
@@ -6,6 +6,10 @@ public class Car {
     public final boolean isElectric;
     String kolor;
     private Double value = 5000.0;
+
+    public String toString() {
+        return this.producer + " " + this.model;
+    }
 
     public Double getValue() {
         return value;

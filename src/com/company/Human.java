@@ -1,11 +1,17 @@
 package com.company;
 
+import com.company.Devices.Car;
+import com.company.Devices.Phone;
+
 public class Human {
     String firstName;
     String lastName;
     Animal pet;
     Phone phone;
     private Car car;
+    public String toString(){
+        return this.firstName + " " + this.lastName;
+    }
 
     private Double salary = 2000.0;
 
