@@ -17,7 +17,8 @@ public class Main {
         me.pet = dog;
         me.car = audi;
 
-        System.out.println(me.pet.name);
-        System.out.println(me.firstName + " " + me.lastName);
+        me.setSalary(1500.0);
+
+        System.out.println("I earned " + me.getSalary() + " this month");
     }
 }
