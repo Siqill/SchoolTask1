@@ -9,30 +9,15 @@ public class Main {
         Animal mouse = new Animal("mouse");
         mouse.name = "Mouse";
 
+        Car audi = new Car("Audi", "R8", false, "black");
 
         Human me = new Human();
         me.firstName = "Yahor";
         me.lastName = "Shauliuk";
         me.pet = dog;
+        me.car = audi;
 
         System.out.println(me.pet.name);
         System.out.println(me.firstName + " " + me.lastName);
-
-        dog.feed();
-        dog.feed();
-        dog.takeForAWalk();
-        dog.feed();
-        dog.feed();
-        dog.feed();
-        dog.feed();
-        dog.feed();
-        dog.feed();
-        dog.feed();
-        dog.feed();
-        dog.feed();
-        dog.feed();
-
-
-
     }
 }
