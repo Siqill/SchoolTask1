@@ -28,8 +28,30 @@ public class Animal {
     }
 
     void feed() {
-        weight += 0.1;
-        System.out.println("thx for food. my weight is now " + this.weight);
+        if (weight >= 20.0) {
+            System.out.println("Your pet is too fat. Dead!");
+        }
+        else if(weight == 0) {
+            System.out.println("too late!");
+        }
+        else {
+            weight++;
+            System.out.println("thx for food!!! My weight is " + this.weight + " now");
+        }
+    }
+
+    void takeForAWalk() {
+        if (weight == 0) {
+            System.out.println("Your pet is dead");
+        }
+        else if (weight >= 20.0) {
+            System.out.println("Your pet is too fat. Dead!");
+        }
+        else {
+            weight--;
+            System.out.println("Thx for a walk!!! My weight is " + this.weight + " now");
+        }
+
     }
 
 }

@@ -9,13 +9,6 @@ public class Main {
         Animal mouse = new Animal("mouse");
         mouse.name = "Mouse";
 
-        dog.feed();
-        dog.feed();
-
-        mouse.feed();
-        mouse.feed();
-        mouse.feed();
-
 
         Human me = new Human();
         me.firstName = "Yahor";
@@ -24,6 +17,21 @@ public class Main {
 
         System.out.println(me.pet.name);
         System.out.println(me.firstName + " " + me.lastName);
+
+        dog.feed();
+        dog.feed();
+        dog.takeForAWalk();
+        dog.feed();
+        dog.feed();
+        dog.feed();
+        dog.feed();
+        dog.feed();
+        dog.feed();
+        dog.feed();
+        dog.feed();
+        dog.feed();
+        dog.feed();
+
 
 
     }
