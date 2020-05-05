@@ -5,6 +5,12 @@ public class Car {
     public final String model;
     public final boolean isElectric;
     String kolor;
+    private Double value = 5000.0;
+
+    public Double getValue() {
+        return value;
+    }
+
 
     public Car(String producer, String model, boolean isElectric, String kolor) {
         this.producer = producer;

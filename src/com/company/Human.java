@@ -5,7 +5,7 @@ public class Human {
     String lastName;
     Animal pet;
     Phone phone;
-    Car car;
+    private Car car;
 
     private Double salary = 2000.0;
 
@@ -23,5 +23,24 @@ public class Human {
         System.out.println("Data has been sent to accounting system");
         System.out.println("You must pick up an annex from Ms. Hani!!!");
         this.salary = salary;
+    }
+
+    public void setCar(Car car) {
+        if(car.getValue() <= this.salary) {
+            System.out.println("Congratulations! You just bought a new car!");
+            this.car = car;
+        }
+        else if(car.getValue() <= this.salary * 12) {
+            System.out.println("Nice! You just bought a new car in credit!");
+            this.car = car;
+        }
+        else {
+            System.out.println("Sorry, but you don't have enough money.");
+        }
+
+    }
+
+    public Car getCar() {
+        return car;
     }
 }

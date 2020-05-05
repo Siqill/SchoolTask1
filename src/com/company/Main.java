@@ -15,10 +15,12 @@ public class Main {
         me.firstName = "Yahor";
         me.lastName = "Shauliuk";
         me.pet = dog;
-        me.car = audi;
 
         me.setSalary(1500.0);
 
         System.out.println("I earned " + me.getSalary() + " this month");
+
+        me.setCar(audi);
+        System.out.println(me.getCar().producer + " " + me.getCar().model);
     }
 }
