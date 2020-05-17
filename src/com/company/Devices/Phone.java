@@ -1,20 +1,22 @@
 package com.company.Devices;
 
-public class Phone {
-    public final String producer;
-    public final String model;
+public class Phone extends Device{
+
+    public void turnOn() {
+        System.out.println("Phone turns on");
+    }
+
     public final Double screenSize;
     public final boolean isAndroid;
 
-    public String toString() {
-        return this.producer + " " + this.model;
-    }
-
-    public Phone(String producer, String model, Double screenSize, boolean isAndroid) {
-        this.producer = producer;
-        this.model = model;
+    public Phone(String producer, String model, int yearOfProduction, Double screenSize, boolean isAndroid) {
+        super(producer, model, yearOfProduction);
         this.screenSize = screenSize;
         this.isAndroid = isAndroid;
+    }
+
+    public String toString() {
+        return super.toString() + " " + this.screenSize + " " + this.isAndroid;
     }
 }
 

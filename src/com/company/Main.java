@@ -12,16 +12,15 @@ public class Main {
         Animal mouse = new Animal("mouse");
         mouse.name = "Mouse";
 
-        Car audi = new Car("Audi", "R8", false, "black");
-        Car audi1 = new Car("Audi", "R8", false, "black");
-        Car bmw = new Car("BMW", "I8", true, "blue");
+        Car audi = new Car("Audi", "R8", 2016, true, "black");
 
-        Phone phone = new Phone("LG", "G8", 7.0, true);
+        Phone lg = new Phone("LG", "G8", 2015, 7.5, true);
+
         Human me = new Human();
         me.firstName = "Yahor";
         me.lastName = "Shauliuk";
         me.pet = dog;
-        me.phone = phone;
+        me.phone = lg;
 
         me.setSalary(1500.0);
 
@@ -30,14 +29,11 @@ public class Main {
         me.setCar(audi);
         System.out.println(me.getCar().producer + " " + me.getCar().model);
 
-        System.out.println((audi).equals(bmw));
-        System.out.println((audi).equals(audi1)); //wyrzuca false
-        System.out.println(dog);
-        System.out.println(audi);
-        System.out.println(audi1);
         System.out.println(me.toString());
         System.out.println(audi.toString());
-        System.out.println(dog.toString());
-        System.out.println(phone.toString());
+        System.out.println(lg.toString());
+        lg.turnOn();
+        audi.turnOn();
+
     }
 }
