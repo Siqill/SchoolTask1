@@ -2,6 +2,8 @@ package com.company.Creatures;
 
 public class FarmAnimal extends Animal implements Eatable {
 
+    public static final Double DEFAULT_FOOD_WEIGHT = 0.3;
+
     public FarmAnimal(String species) {
         super(species);
     }
@@ -41,6 +43,6 @@ public class FarmAnimal extends Animal implements Eatable {
 
     @Override
     public void feed(Double foodWeight) {
-
+        feed(DEFAULT_FOOD_WEIGHT);
     }
 }

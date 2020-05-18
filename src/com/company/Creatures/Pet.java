@@ -3,6 +3,8 @@ package com.company.Creatures;
 public class Pet extends Animal {
     public String name;
 
+    public static final Double DEFAULT_FOOD_WEIGHT = 0.2;
+
     public Pet(String species, String name) {
         super(species);
         this.name = name;
@@ -31,6 +33,6 @@ public class Pet extends Animal {
 
     @Override
     public void feed(Double foodWeight) {
-
+        feed(DEFAULT_FOOD_WEIGHT);
     }
 }

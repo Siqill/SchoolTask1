@@ -9,7 +9,6 @@ public abstract class Animal implements Saleable, Feedable {
     static final public Double DEFAULT_LION_WEIGHT = 190.0;
     static final public Double DEFAULT_MOUSE_WEIGHT = 0.05;
 
-
     public final String species;
     private Double weight = 10.0;
 

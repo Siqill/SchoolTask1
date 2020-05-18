@@ -12,6 +12,8 @@ public class Human extends Animal {
     public Double cash;
     private Car car;
 
+    public static final Double DEFAULT_FOOD_WEIGHT = 0.5;
+
     public Human() {
         super("Homosapiens");
     }
@@ -29,7 +31,7 @@ public class Human extends Animal {
 
     @Override
     public void feed(Double foodWeight) {
-
+        feed(DEFAULT_FOOD_WEIGHT);
     }
 
     public String toString(){

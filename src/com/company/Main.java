@@ -57,7 +57,8 @@ public class Main {
         pig.beEaten();
         pig.feed();
         me.feed();
-        dog.feed(0.5);
+        dog.feed();
+        me.feed();
 
 
     }
