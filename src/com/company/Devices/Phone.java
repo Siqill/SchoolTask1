@@ -2,7 +2,36 @@ package com.company.Devices;
 
 import com.company.Creatures.Human;
 
+import java.net.MalformedURLException;
+import java.net.URL;
+
 public class Phone extends Device {
+
+    public static final String SERVER_ADRESS = "1.101.010.01";
+    public static final String PROTOCOL = "https:";
+    public static final String APP_NAME = "Instagram";
+
+    public void installAnApp(String appName) {
+        System.out.println("You install " + appName);
+    }
+
+    public void installAnApp(String appName, String version) {
+        System.out.println("You install " + appName + " with version " + version);
+    }
+
+    public void installAnApp(String appName, String version, String serverAdress) {
+        System.out.println("You install " + appName + " with version " + version + " from " + serverAdress);
+    }
+
+    public void installAnApp(String[] appNames) {
+        for (String appName : appNames) {
+            installAnApp(appName);
+        }
+    }
+
+    public void installAnApp(URL appURL) throws MalformedURLException {
+        System.out.println("You install app from " + appURL);
+    }
 
     public void turnOn() {
         System.out.println("Phone turns on");

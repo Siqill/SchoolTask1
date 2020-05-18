@@ -21,7 +21,6 @@ public abstract class Animal implements Saleable, Feedable {
     public Animal(String species) {
         this.species = species;
 
-
         if (species == "lion") {
             this.weight = DEFAULT_LION_WEIGHT;
         }

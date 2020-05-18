@@ -5,7 +5,12 @@ import com.company.Creatures.FarmAnimal;
 import com.company.Creatures.Human;
 import com.company.Creatures.Pet;
 import com.company.Devices.Car;
+import com.company.Devices.Disel;
+import com.company.Devices.Electric;
 import com.company.Devices.Phone;
+
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class Main {
 
@@ -14,7 +19,8 @@ public class Main {
         Pet dog = new Pet("dog","Doggi");
         FarmAnimal pig = new FarmAnimal("pig");
 
-        Car audi = new Car("Audi", "R8", 2016, true, "black");
+        Car audi = new Electric("Audi", "R8", 2016, "black");
+        Car bmw = new Disel("BMW", "I8", 2019, "white");
 
         Phone lg = new Phone("LG", "G8", 2015, 7.5, true);
 
@@ -33,32 +39,23 @@ public class Main {
         me.pet = dog;
         me.farmAnimal = pig;
         me.phone = lg;
+        me.setCar(audi);
+        son.setCar(bmw);
 
         jimmy.cash = 2000.0;
 
-        me.setSalary(1500.0);
-
-        System.out.println("I earned " + me.getSalary() + " this month");
-
-        me.setCar(audi);
-        System.out.println(me.getCar().producer + " " + me.getCar().model);
-
-        System.out.println(me.toString());
-        System.out.println(audi.toString());
-        System.out.println(lg.toString());
-        lg.turnOn();
-        audi.turnOn();
+        lg.installAnApp("Facebook");
+        lg.installAnApp("Instagram", "5.24");
+        lg.installAnApp("Spotify", "1.2", "google.play/spotify");
+        try {
+            lg.installAnApp(new URL("https", "google.play/", "Spotify"));
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
 
 
-        me.pet.sell(me, jimmy, 500.0);
-        me.phone.sell(me, jimmy, 1000.0);
-        me.getCar().sell(me, jimmy, 2500.0);
-        son.sell(me, jimmy, 100000.0);
-        pig.beEaten();
-        pig.feed();
-        me.feed();
-        dog.feed();
-        me.feed();
+        me.getCar().reFuel();
+        son.getCar().reFuel();
 
 
     }
