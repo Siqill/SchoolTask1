@@ -1,6 +1,8 @@
 package com.company.Devices;
 
-public abstract class Device {
+import com.company.Saleable;
+
+public abstract class Device implements Saleable {
 
     public abstract void turnOn();
 

@@ -3,12 +3,18 @@ package com.company;
 import com.company.Devices.Car;
 import com.company.Devices.Phone;
 
-public class Human {
+public class Human extends Animal{
     String firstName;
     String lastName;
-    Animal pet;
-    Phone phone;
+    public Animal pet;
+    public Phone phone;
+    public Double cash;
     private Car car;
+
+    public Human() {
+        super("Homosapiens");
+    }
+
     public String toString(){
         return this.firstName + " " + this.lastName;
     }
