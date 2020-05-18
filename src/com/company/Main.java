@@ -1,16 +1,18 @@
 package com.company;
 
+import com.company.Creatures.Animal;
+import com.company.Creatures.FarmAnimal;
+import com.company.Creatures.Human;
+import com.company.Creatures.Pet;
 import com.company.Devices.Car;
 import com.company.Devices.Phone;
 
 public class Main {
 
     public static void main(String[] args) {
-        Animal dog = new Animal("dog");
-        dog.name = "Doggi";
 
-        Animal mouse = new Animal("mouse");
-        mouse.name = "Mouse";
+        Pet dog = new Pet("dog","Doggi");
+        FarmAnimal pig = new FarmAnimal("pig");
 
         Car audi = new Car("Audi", "R8", 2016, true, "black");
 
@@ -29,9 +31,8 @@ public class Main {
 
         me.cash = 5000.0;
         me.pet = dog;
+        me.farmAnimal = pig;
         me.phone = lg;
-
-
 
         jimmy.cash = 2000.0;
 
@@ -48,14 +49,16 @@ public class Main {
         lg.turnOn();
         audi.turnOn();
 
-        try {
-            me.pet.sell(me, jimmy, 500.0);
-            me.phone.sell(me, jimmy, 1000.0);
-            me.getCar().sell(me, jimmy, 2500.0);
-            son.sell(me, jimmy, 100000.0);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+
+        me.pet.sell(me, jimmy, 500.0);
+        me.phone.sell(me, jimmy, 1000.0);
+        me.getCar().sell(me, jimmy, 2500.0);
+        son.sell(me, jimmy, 100000.0);
+        pig.beEaten();
+        pig.feed();
+        me.feed();
+        dog.feed(0.5);
+
 
     }
 }

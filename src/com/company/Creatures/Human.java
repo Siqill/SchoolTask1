@@ -1,18 +1,35 @@
-package com.company;
+package com.company.Creatures;
 
 import com.company.Devices.Car;
 import com.company.Devices.Phone;
 
-public class Human extends Animal{
-    String firstName;
-    String lastName;
+public class Human extends Animal {
+    public String firstName;
+    public String lastName;
     public Animal pet;
+    public FarmAnimal farmAnimal;
     public Phone phone;
     public Double cash;
     private Car car;
 
     public Human() {
         super("Homosapiens");
+    }
+
+    @Override
+    public void sell(Human seller, Human buyer, Double price){
+        if(this instanceof Human) {
+            System.out.println("No way");
+        }
+    }
+
+    public void feed(){
+        System.out.println("Tasty");
+    }
+
+    @Override
+    public void feed(Double foodWeight) {
+
     }
 
     public String toString(){

@@ -1,6 +1,6 @@
 package com.company.Devices;
 
-import com.company.Human;
+import com.company.Creatures.Human;
 
 public class Phone extends Device {
 
@@ -9,7 +9,7 @@ public class Phone extends Device {
     }
 
     @Override
-    public void sell(Human seller, Human buyer, Double price) throws Exception {
+    public void sell(Human seller, Human buyer, Double price) {
         if (seller.phone == this && buyer.cash >= price) {
             buyer.cash -= price;
             seller.cash += price;
