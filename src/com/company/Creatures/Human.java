@@ -2,6 +2,7 @@ package com.company.Creatures;
 
 import com.company.Devices.Car;
 import com.company.Devices.Phone;
+import java.util.Arrays;
 
 public class Human extends Animal {
     public String firstName;
@@ -10,13 +11,71 @@ public class Human extends Animal {
     public FarmAnimal farmAnimal;
     public Phone phone;
     public Double cash;
-    private Car car;
+    private Car[] garage;
+
 
     public static final Double DEFAULT_FOOD_WEIGHT = 0.5;
+    public static final int DEFAULT_GARAGE_SIZE = 2;
 
     public Human() {
         super("Homosapiens");
+        this.garage = new Car[DEFAULT_GARAGE_SIZE];
     }
+
+    public Human(int garageSize) {
+        super("Homosapiens");
+        this.garage = new Car[garageSize];
+    }
+
+    public Double carsSumValue(){
+        Double sum = 0.0;
+        for (Car car : this.garage) {
+            if(car != null) {
+                sum += car.value;
+            }
+        }
+        return sum;
+    }
+
+    public void sortCarsByYear() {
+        Arrays.sort(garage);
+    }
+
+    public boolean isCarInGarage(Car newCar) {
+        for (Car car : garage) {
+            if(car == newCar) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean isFreeSpaceInGarage() {
+        for(Car car : garage) {
+            if(car == null) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void removeCar(Car newCar) {
+        for (int i = 0; i < garage.length; i++) {
+            if (this.garage[i] == newCar) {
+                this.garage[i] = null;
+            }
+        }
+    }
+
+    public void addCar(Car newCar) {
+        for(int i = 0; i < garage.length; i++) {
+            if(this.garage[i] == null) {
+                this.garage[i] = newCar;
+                break;
+            }
+        }
+    }
+
 
     @Override
     public void sell(Human seller, Human buyer, Double price){
@@ -25,45 +84,19 @@ public class Human extends Animal {
         }
     }
 
-    public void feed(){
-        System.out.println("Tasty");
-    }
-
     @Override
     public void feed(Double foodWeight) {
         feed(DEFAULT_FOOD_WEIGHT);
     }
 
-    public String toString(){
-        return this.firstName + " " + this.lastName;
-    }
-
-    private Double salary = 2000.0;
-
-    public Double getSalary() {
-        return salary;
-    }
-
-    public void setSalary(Double salary) {
-        if(salary < 0) {
-            System.out.println("Your salary must be higher than 0! Set another amount.");
-        }
-        else if (salary != 2000.0) {
-            System.out.println("ZUS and US already know! Do not lie!");
-        }
-        System.out.println("Data has been sent to accounting system");
-        System.out.println("You must pick up an annex from Ms. Hani!!!");
-        this.salary = salary;
-    }
-
-    public void setCar(Car car) {
-        if(car.getValue() <= this.salary) {
+    public void setCar(Car car, int index) {
+        if(car.getValue() <= this.cash) {
             System.out.println("Congratulations! You just bought a new car!");
-            this.car = car;
+            this.garage[index] = car;
         }
-        else if(car.getValue() <= this.salary * 12) {
+        else if(car.getValue() <= this.cash * 12) {
             System.out.println("Nice! You just bought a new car in credit!");
-            this.car = car;
+            this.garage[index] = car;
         }
         else {
             System.out.println("Sorry, but you don't have enough money.");
@@ -71,7 +104,11 @@ public class Human extends Animal {
 
     }
 
-    public Car getCar() {
-        return car;
+    public Car getCar(int index) {
+        return garage[index];
+    }
+
+    public String toString(){
+        return this.firstName + " " + this.lastName;
     }
 }

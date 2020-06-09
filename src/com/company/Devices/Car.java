@@ -2,10 +2,9 @@ package com.company.Devices;
 
 import com.company.Creatures.Human;
 
-public abstract class Car extends Device {
+public abstract class Car extends Device implements Comparable<Car> {
 
     String kolor;
-    private Double value = 5000.0;
 
     public abstract void reFuel();
 
@@ -13,34 +12,34 @@ public abstract class Car extends Device {
         System.out.println("Car turns on");
     }
 
-    @Override
-    public void sell(Human seller, Human buyer, Double price) {
-        if(seller.getCar() == this && buyer.cash >= price) {
-            buyer.cash -= price;
-            seller.cash += price;
-            buyer.setCar(this);
-            seller.setCar(null);
-            System.out.println("You just had a deal!");
-            System.out.println(buyer + " now have " + buyer.getCar());
-            System.out.println(seller + " now have no more " + buyer.getCar() );
-            System.out.println(seller + " now have " + seller.cash);
-            System.out.println(buyer + " now have " + buyer.cash);
-        }
-        else if (buyer.cash < price) {
-            System.out.println(buyer + " do not have enough money");
-        }
-        else if (seller.getCar() != this) {
-            System.out.println(seller + " do not have that car");
-        }
+    public int compareTo(Car i) {
+        return i.yearOfProduction - this.yearOfProduction;
+    }
 
+    @Override
+    public void sell(Human seller, Human buyer, Double price) throws Exception {
+        if(!seller.isCarInGarage(this)) {
+            throw new Exception("no car in garage");
+        }
+        if(!buyer.isFreeSpaceInGarage()) {
+            throw new Exception("no space in garage");
+        }
+        if(buyer.cash < price) {
+            throw new Exception("no money too much");
+        }
+        seller.removeCar(this);
+        buyer.addCar(this);
+        seller.cash += price;
+        buyer.cash -= price;
+        System.out.println("Deal!");
     }
 
     public Double getValue() {
         return value;
     }
 
-    public Car(String producer, String model, int yearOfProduction, String kolor) {
-        super(producer, model, yearOfProduction);
+    public Car(String producer, String model, int yearOfProduction, Double value, String kolor) {
+        super(producer, model, yearOfProduction, value);
         this.kolor = kolor;
     }
 

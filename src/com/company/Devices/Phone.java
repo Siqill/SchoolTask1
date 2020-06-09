@@ -60,8 +60,8 @@ public class Phone extends Device {
     public final Double screenSize;
     public final boolean isAndroid;
 
-    public Phone(String producer, String model, int yearOfProduction, Double screenSize, boolean isAndroid) {
-        super(producer, model, yearOfProduction);
+    public Phone(String producer, String model, int yearOfProduction, Double value, Double screenSize, boolean isAndroid) {
+        super(producer, model, yearOfProduction, value);
         this.screenSize = screenSize;
         this.isAndroid = isAndroid;
     }
