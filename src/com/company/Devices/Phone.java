@@ -33,10 +33,6 @@ public class Phone extends Device {
         System.out.println("You install app from " + appURL);
     }
 
-    public void turnOn() {
-        System.out.println("Phone turns on");
-    }
-
     @Override
     public void sell(Human seller, Human buyer, Double price) {
         if (seller.phone == this && buyer.cash >= price) {

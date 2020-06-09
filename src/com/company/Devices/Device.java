@@ -4,8 +4,6 @@ import com.company.Saleable;
 
 public abstract class Device implements Saleable {
 
-    public abstract void turnOn();
-
     public final String producer;
     public final String model;
     public final int yearOfProduction;

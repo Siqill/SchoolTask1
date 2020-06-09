@@ -13,11 +13,6 @@ public class Electric extends Car {
     }
 
     @Override
-    public void reFuel() {
-        System.out.println("Your car battery is full. Go ahead!");
-    }
-
-    @Override
     public void sell(Human seller, Human buyer, Double price) {
 
     }

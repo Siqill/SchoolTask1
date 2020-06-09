@@ -60,7 +60,7 @@ public class Human extends Animal {
     }
 
     public void removeCar(Car newCar) {
-        for (int i = 0; i < garage.length; i++) {
+        for (int i = 0; i < this.garage.length; i++) {
             if (this.garage[i] == newCar) {
                 this.garage[i] = null;
             }
@@ -68,7 +68,7 @@ public class Human extends Animal {
     }
 
     public void addCar(Car newCar) {
-        for(int i = 0; i < garage.length; i++) {
+        for(int i = 0; i < this.garage.length; i++) {
             if(this.garage[i] == null) {
                 this.garage[i] = newCar;
                 break;

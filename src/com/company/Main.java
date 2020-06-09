@@ -3,10 +3,7 @@ package com.company;
 import com.company.Creatures.FarmAnimal;
 import com.company.Creatures.Human;
 import com.company.Creatures.Pet;
-import com.company.Devices.Car;
-import com.company.Devices.Disel;
-import com.company.Devices.Electric;
-import com.company.Devices.Phone;
+import com.company.Devices.*;
 
 
 public class Main {
@@ -37,15 +34,25 @@ public class Main {
 
 
         try {
-            audi.sell(me, jimmy, 6000.0);
+            audi.sell(me, jimmy, 5000.0);
         } catch (Exception e) {
             e.printStackTrace();
         }
 
         System.out.println(me.cash);
         System.out.println(jimmy.cash);
-        System.out.println(me.isCarInGarage(audi));
+        System.out.println(me.getCar(0));
         System.out.println(me.carsSumValue());
+
+        Transaction first = new Transaction(me, jimmy, 100.0, "26.06.2020");
+        Transaction second = new Transaction(jimmy, me, 250.0, "06.05.2020");
+
+        audi.listOfTransactions.add(first);
+        bmw.listOfTransactions.add(second);
+
+        System.out.println(audi.wasOwner(me));
+        System.out.println(audi.wasSold(jimmy, me));
+        System.out.println(audi.numOfTransactions());
 
 
 
